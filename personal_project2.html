@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project One - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/Goose.png">
+</head>
+<body>
+
+    <div class="portfolio-container">
+        
+        <!-- Top Header (Name/Icon | Nav Menu) -->
+        <header class="top-header">
+            <div class="brand-box">
+                <img src="images/Goose.png" alt="Icon" class="brand-icon">
+                <a href="index.html" class="brand-name">Gijs Elderman</a>
+            </div>
+            
+            <nav class="table-of-contents">
+                <a href="index.html#about">About Me</a>
+                <a href="index.html#professional-projects">Professional Projects</a>
+                <a href="index.html#personal-projects">Personal Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="project-story-section">
+            
+            <!-- Project Title & Badges Header -->
+            <div class="story-header">
+                <h2>Fisherman Fred</h2>
+                <div class="project-badges">
+                    <span class="badge">Project Type: Personal Project</span>
+                    <span class="badge">Project Duration: -</span>
+                    <span class="badge">Team size: 1</span>
+                </div>
+            </div>
+
+            <!-- First image -->
+            <div class="story-media-box">
+                <img src="images/personal_project2/fishermanfred_banner.png" alt="Project Banner">
+            </div>
+
+            <!-- First textbox -->
+            <div class="story-text-card">
+                <h3>Project Information</h3>
+                <p><strong>Fisherman Fred</strong> is a 2D fishing game made inside GameMaker, this was the first time I ever used GameMaker. So I'm pretty proud of this project since it was my first one.</p>
+                <p>In this game you need to catch as many fish as possible, whenever you hook a fish a skillcheck appears. If you fail that skillcheck, the fish swims away.</p>
+                <br>
+                <p>Click on this link to open the itch.io page of the game:</p>
+                <a href="https://meatchips.itch.io/fisherman-fred"><strong>https://meatchips.itch.io/fisherman-fred</strong></a>
+            </div>
+
+            <!-- Second image -->
+            <div class="story-media-box">
+                <img src="images/personal_project2/fishermanfred_gameplay.png" alt="Project Screenshot 1">
+            </div>
+
+            <!-- Second textbox -->
+            <div class="story-text-card">
+                <h3>My Contributions</h3>
+
+                <!-- Programming Section -->
+                <h4>Programming</h4>
+                <ul>
+                    <li>Created player movement</li>
+                    <li>Created a fishing system</li>
+                    <li>Added that a skillcheck appears when you catch a fish</li>
+                    <li>Added a points system, were every fish gives different points</li>
+                    <li>Created a system were the fishes keep swimming from left to right</li>
+                    <li>Created a main menu</li>
+                </ul>
+
+                <!-- Art Section -->
+                <h4>Art</h4>
+                <ul>
+                    <Li>Player sprite</Li>
+                    <li>All fish sprites</li>
+                    <li>Environment sprites</li>
+                    <li>UI sprites</li>
+                </ul>
+            </div>
+
+            <!-- Third image -->
+            <div class="story-media-box">
+                <img src="images/personal_project2/fishermanfred_gameplay2.png" alt="Project Screenshot 2">
+            </div>
+
+            <div id="imageModal" class="modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="expandedImg" alt="Expanded View">
+            </div>
+
+            <script>
+                // Get the modal elements
+                const modal = document.getElementById("imageModal");
+                const modalImg = document.getElementById("expandedImg");
+                const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+                // Find all images in your dropdowns and media boxes
+                const images = document.querySelectorAll(".dropdown-media img, .story-media-box img");
+
+                // When an image is clicked, open the modal and display that image
+                images.forEach(img => {
+                    img.addEventListener("click", function() {
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    });
+                });
+
+                // Close modal when clicking the 'X' button
+                closeBtn.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // Close modal when clicking anywhere outside the image background
+                modal.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+</body>
+</html>

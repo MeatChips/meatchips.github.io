@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project One - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/Goose.png">
+</head>
+<body>
+
+    <div class="portfolio-container">
+        
+        <!-- Top Header (Name/Icon | Nav Menu) -->
+        <header class="top-header">
+            <div class="brand-box">
+                <img src="images/Goose.png" alt="Icon" class="brand-icon">
+                <a href="index.html" class="brand-name">Gijs Elderman</a>
+            </div>
+            
+            <nav class="table-of-contents">
+                <a href="index.html#about">About Me</a>
+                <a href="index.html#professional-projects">Professional Projects</a>
+                <a href="index.html#personal-projects">Personal Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="project-story-section">
+            
+            <!-- Project Title & Badges Header -->
+            <div class="story-header">
+                <h2>Other Projects</h2>
+                <div class="project-badges">
+                    <span class="badge">Project Type: Personal Projects</span>
+                </div>
+            </div>
+
+            <!-- First image -->
+            <div class="story-media-box">
+                <img src="images/other_projects/OtherProjectsBanner.png" alt="Projects Banner">
+            </div>
+
+            <!-- Second image -->
+            <div class="story-media-box">
+                <img src="images/other_projects/DGDC_GAMEJAM_Coverartbanner.png" alt="Project Screenshot 1">
+            </div>
+
+            <!-- First textbox -->
+            <div class="story-text-card">
+                <h3>Chrono Sol</h3>
+                <p><strong>Chrono Sol</strong> is a game created for the Dutch Summer Game Jam hosted by the Dutch Game Dev Collective. The theme during this game jam was <strong>Running out of sunshine</strong>. This project was created in a team of 2, were I did everything inside Unity and the other created all the art.</p>
+                <p>In this game you play as a sun warrior who fights the shadow monsters using your sunlight powers. The part where the theme comes in, is that you do more damage during the day, but the monster does more damage during the night. So the moment you run out of sunlight, is the moment the monster starts becoming more dangerous.</p>
+                <br>
+                <p>Click on this link to open the itch.io page of the game:</p>
+                <a href="https://meatchips.itch.io/chrono-sol"><strong>https://meatchips.itch.io/chrono-sol</strong></a>
+            </div>
+
+            <!-- Third image -->
+            <div class="story-media-box">
+                <img src="images/other_projects/DungeonFloorFigher.png" alt="Project Screenshot 2">
+            </div>
+
+            <!-- Second textbox -->
+            <div class="story-text-card">
+                <h3>Dungeon Floor Fighter</h3>
+                <p><strong>Dungeon Floor Fighter</strong> is a 2D top-down dungeon crawler which I created during a game design course at school.</p>
+                <p>The gameplay goes as follows, you spawn in a dungeon and you have to make your way to the boss room to kill the boss and clear the dungeon. After killing a boss, you come across a small market place were you can sell your loot and buy health potions. And then you can go to the next dungeon level, there are 3 dungeon levels (Normal Dungeon, Ice Dungeon, Sand Dungeon) all with different bosses.</p>
+                <br>
+                <p>Click on this link to open the itch.io page of the game:</p>
+                <a href="https://meatchips.itch.io/dungeon-floor-fighter"><strong>https://meatchips.itch.io/dungeon-floor-fighter</strong></a>
+            </div>
+
+            <div id="imageModal" class="modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="expandedImg" alt="Expanded View">
+            </div>
+
+            <script>
+                // Get the modal elements
+                const modal = document.getElementById("imageModal");
+                const modalImg = document.getElementById("expandedImg");
+                const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+                // Find all images in your dropdowns and media boxes
+                const images = document.querySelectorAll(".dropdown-media img, .story-media-box img");
+
+                // When an image is clicked, open the modal and display that image
+                images.forEach(img => {
+                    img.addEventListener("click", function() {
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    });
+                });
+
+                // Close modal when clicking the 'X' button
+                closeBtn.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // Close modal when clicking anywhere outside the image background
+                modal.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+</body>
+</html>

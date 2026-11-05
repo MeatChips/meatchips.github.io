@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project One - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/Goose.png">
+</head>
+<body>
+
+    <div class="portfolio-container">
+        
+        <!-- Top Header (Name/Icon | Nav Menu) -->
+        <header class="top-header">
+            <div class="brand-box">
+                <img src="images/Goose.png" alt="Icon" class="brand-icon">
+                <a href="index.html" class="brand-name">Gijs Elderman</a>
+            </div>
+            
+            <nav class="table-of-contents">
+                <a href="index.html#about">About Me</a>
+                <a href="index.html#professional-projects">Professional Projects</a>
+                <a href="index.html#personal-projects">Personal Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </header>
+        
+        <section class="project-story-section">
+            
+            <!-- Project Title & Badges Header -->
+            <div class="story-header">
+                <h2>Drone It</h2>
+                <div class="project-badges">
+                    <span class="badge">Project Type: School project</span>
+                    <span class="badge">Project Duration: 6 months</span>
+                    <span class="badge">Team size: 5</span>
+                </div>
+            </div>
+
+            <!-- First image -->
+            <div class="story-media-box">
+                <img src="images/project1/DroneIt_Banner1.png" alt="Project Banner">
+            </div>
+
+            <!-- First textbox -->
+            <div class="story-text-card">
+                <h3>Project Information</h3>
+                <p><strong>Drone It</strong> is a VLOS (visual line of sight) drone simulator created to solve a common problem: limited class time, shared equipment and unpredictable weather. Created for our client from Noorderpoort, it offers the students a gamified way to practice outside of school hours.</p>
+                <p>Unlike standard first-person simulators, Drone It mimics real life piloting by forcing the player to keep eyes on the drone from a distance. The simulator features three main modes:</p>
+                <ul>
+                    <li><strong>The Hangar</strong>: Tutorial pattern exercises and free-roam tracks for control practice.</li>
+                    <li><strong>Outside</strong>: Bigger flying area were wind can be turned on.</li>
+                    <li><strong>The Hub</strong>: The Hub: The lounge that connect outside with the hangar. But also a place were a workbench for swapping different drone components is.</li>
+                </ul>
+                <p>It supports both standard gaming controllers and real drone controllers, to keep the experience open to every student!</p>
+            </div>
+
+            <!-- Second image -->
+            <div class="story-media-box">
+                <img src="images/project1/DroneIt_Banner2.png" alt="Project Screenshot 1">
+            </div>
+
+            <!-- Second textbox -->
+            <div class="story-text-card">
+                <h3>My Contributions</h3>
+
+                <!-- Programming Section -->
+                <h4>Programming</h4>
+                <ul>
+                    <li>Made all the tutorials for the drone, plus a way to play them in order or to pick one on its own.</li>
+                    <li>Built a system to choose different layouts to fly around in the hangar.</li>
+                    <li>Made sure all the buttons and screens worked with everything in the game.</li>
+                    <li>Built a universal interaction system.</li>
+                    <li>Created all the in-game menus.</li>
+                    <li>Made it easy to switch between playing as the person on foot and flying the drone.</li>
+                    <li>Created the player & camera movement.</li>
+                    <li>Added a camera zoom in and out feature for flying the drone.</li>
+                    <li>Added an option to turn tutorial on or off.</li>
+                </ul>
+                
+                <details class="contribution-dropdown">
+                    <summary>Click here to see Code, Challenges & Implementations</summary>
+                    <div class="dropdown-content">
+                        <div class="dropdown-media">
+                            <p><strong>Tutorial Manager &amp; Tutorials:</strong></p>
+                            <img src="images/project1/programming/droneflying_tutorial.gif" alt="Waypoint Tutorial GIF">
+                            <br>
+                            <p><strong>What I have made:</strong><br>
+                            I have created an entire tutorial system with different tutorials. These are the tutorials that I have created: Waypoint, Orbit, Hold Height and Landing.</p>
+                            <br>
+                            <p><strong>Challenge & Solution:</strong><br>
+                            During this process, I ran into an issue, since every tutorial had a bunch of waypoints for the drone to fly towards to. But assigning these waypoints in the unity inspector would become annoying if you have to do it over and over again. I thought about using tags, but that searches the whole scene and could grab wrong waypoints for example. Instead, I made the parent object look at its own children objects. I used C# LINQ (Where / OrderBy / StartsWith) to ignore all the other children and only look for the waypoints. I was also able to give the waypoints a number, so it could sort the children. So it starts at waypoint 1, then 2, etc.</p>
+                            <br>
+                            <p><strong>Code Snippet:</strong></p>
+                            <img src="images/project1/programming/codesnippet_1.png" alt="Code Snippet">
+                            <br>
+                            <p><strong>What I learned from this challenge:</strong></p>
+                            <ul>
+                                <li>I learned how to use some LINQ methods to keep code clean and search for specific objects of a scene.</li>
+                            </ul>
+
+                            <br>
+                            <hr class="divider">
+                            <br>
+
+                            <p><strong>Modular Interaction System:</strong></p>
+                            <img src="images/project1/programming/interactionsystem.gif" alt="Interaction System GIF">
+                            <br>
+                            <p><strong>What I have made:</strong><br>
+                            I made a modular interface-based interaction system that allows the player to look at an interactable object in the world and see at the correct keyboard prompt on their screen and interact with it.</p>
+                            <br>
+                            <p><strong>Feature Information:</strong><br>
+                            Instead of writing custom interaction logic for every single object, I built a modular system using interfaces and Unity's new input system.</p>
+                            <ul>
+                                <li>Interface-based system: Any object in the game can become a interactable, simply by having a script that inherits from the IInteractable interface.</li>
+                                <li>Keybind prompt: The system reads the player's active keybindings and displays it inside the UI.</li>
+                            </ul>
+                            <br>
+                            <p><strong>Code Snippet:</strong></p>
+                            <img src="images/project1/programming/codesnippet_2.png" alt="Code Snippet">
+                            <br>
+                            <p><strong>What I learned from this challenge:</strong></p>
+                            <ul>
+                                <li>Interface-based sytem: Any object in the game can become a interactable, simply by having a script that inherits from the IInteractable interface.</li>
+                                <li>Keybind prompt: The system reads the player's active keybindings and displays it inside the UI.</li>
+                            </ul>
+
+                            <br>
+                            <hr class="divider">
+                            <br>
+
+                            <p><strong>Editor Screenshot Tool:</strong></p>
+                            <img src="images/project1/programming/screenshot_editor_window.png" alt="Screenshot of Editor Tool">
+                            <br>
+                            <p><strong>What I have made:</strong><br>
+                            I created a custom Unity tool that allowed us to capture in-game screenshots directly inside the editor without cluttering UI elements or manually hiding canvases.</p>
+                            <br>
+                            <p><strong>Challenge & Solution:</strong><br>
+                            Taking manual screenshots for tutorials and marketing materials meant dealing with turning on/off the UI every single time. So the way I fixed it was by creating a custom Unity tool with configurable fields like resolution scaling, folder path and file name. To handle the UI cleanly, the script temporarily disables all active canvases, takes the screenshot and uses EditorApplication.delayCall to safely turn them back on so the UI doesn't accidentally sneak into the screenshot.</p>
+                            <br>
+                            <p><strong>Code Snippet:</strong></p>
+                            <img src="images/project1/programming/codesnippet_3.png" alt="Code Snippet">
+                            <br>
+                            <p><strong>What I learned from this challenge:</strong></p>
+                            <ul>
+                                <li>How to create custom Unity Editor windows with GUI elements like buttons, sliders and text fields</li>
+                                <li>How to use EditorApplication.delayCall to handle frame timing.</li>
+                                <li>Something I found funny to see, you always have to reset GUI.backgroundColor back to the default color after for example giving color to a button. Otherwise the entire Unity Editor becomes that color. Which you can see on the code snippet down below.</li>
+                            </ul>
+                            <br>
+                            <p><strong>Code Snippet:</strong></p>
+                            <img src="images/project1/programming/codesnippet_4.png" alt="Code Snippet">
+                            <br>
+                        </div>
+                    </div>
+                </details>
+
+
+                <!-- UI Design Section -->
+                <h4>UI Design</h4>
+                <ul>
+                    <li>Designed the UI layout for the tutorials/layouts menu.</li>
+                    <li>Created the flying UI that shows helpful information to the player like battery, signal strength, altitude, speed, controller stick movement and drone damage.</li>
+                    <li>Made the instruction UI for when players do a tutorial (like tips and which controls are locked).</li>
+                    <li>Designed the main menu, credits menu and pause menu.</li>
+                </ul>
+
+                <details class="contribution-dropdown">
+                    <summary>Click here to see the UI designs</summary>
+                    <div class="dropdown-content">
+                        <div class="dropdown-media">
+                            <img src="images/project1/ui/tutorials_layout.png" alt="Tutorials UI Design">
+                            <span class="image-caption">This is the UI design that shows when choosing a tutorial. This screen includes the 2 different categories at the top, all the tutorials, a small description, if you want the instructions to be turned on/off and the start button. (art is not made by me)</span>
+                            <hr class="divider">
+                            <img src="images/project1/ui/hangarlayout_layout.png" alt="Hangar Layout UI Design">
+                            <span class="image-caption">This is the UI design that shows when choosing a hangar layout. This screen includes the 2 different categories at the top, all 6 different layouts (3 with balloons to pop and 3 without balloons). (art is not made by me)</span>
+                            <hr class="divider">
+                            <img src="images/project1/ui/droneui_tutorial.png" alt="Drone UI during tutorial">
+                            <span class="image-caption">This is the UI design for when you are flying the drone during a tutorial. This screen includes the drone statistics (battery, signal strength, altitude and speed), the instructions and show which controls are locked, how to restart/stop the tutorial, the drone camera and the controller sticks moving.</span>
+                            <hr class="divider">
+                            <img src="images/project1/ui/droneui_flying.png" alt="Drone UI with no tutorial">
+                            <span class="image-caption">This is the UI design for you are flying the drone freely. This screen is almost the same as with a tutorial, except here you can see the damage the drone has received and the instructions are removed.</span>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Third image -->
+            <div class="story-media-box">
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/uwdMJefgwPA" 
+                        title="Project Trailer" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Third textbox -->
+            <div class="story-text-card">
+                <h3>Special Thanks</h3>
+                <p>A lot of the work showcased above was a team effort and for that I'd like to thank everyone at Knakworst Studio (our project group name) and our client from Noorderpoort!</p>
+                <!-- <ul>
+                    <li>Henk Lukken - Noorderpoort (Client)</li>
+                    <li>Kelvin Yap (Project Lead)</li>
+                    <li>Thygo Lansbergen (Programmer)</li>
+                    <li>Kije Blanksma (3D Artist)</li>
+                    <li>Veronika Todorova (3D Artist)</li>
+                </ul> -->
+            </div>
+
+            <div id="imageModal" class="modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="expandedImg" alt="Expanded View">
+            </div>
+
+            <script>
+                // Get the modal elements
+                const modal = document.getElementById("imageModal");
+                const modalImg = document.getElementById("expandedImg");
+                const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+                // Find all images in your dropdowns and media boxes
+                const images = document.querySelectorAll(".dropdown-media img, .story-media-box img");
+
+                // When an image is clicked, open the modal and display that image
+                images.forEach(img => {
+                    img.addEventListener("click", function() {
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    });
+                });
+
+                // Close modal when clicking the 'X' button
+                closeBtn.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // Close modal when clicking anywhere outside the image background
+                modal.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+</body>
+</html>

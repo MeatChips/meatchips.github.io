@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project One - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/Goose.png">
+</head>
+<body>
+
+    <div class="portfolio-container">
+        
+        <!-- Top Header (Name/Icon | Nav Menu) -->
+        <header class="top-header">
+            <div class="brand-box">
+                <img src="images/Goose.png" alt="Icon" class="brand-icon">
+                <a href="index.html" class="brand-name">Gijs Elderman</a>
+            </div>
+            
+            <nav class="table-of-contents">
+                <a href="index.html#about">About Me</a>
+                <a href="index.html#professional-projects">Professional Projects</a>
+                <a href="index.html#personal-projects">Personal Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="project-story-section">
+            
+            <!-- Project Title & Badges Header -->
+            <div class="story-header">
+                <h2>Dead Air</h2>
+                <div class="project-badges">
+                    <span class="badge">Project Type: Game Jam</span>
+                    <span class="badge">Project Duration: 72 hours</span>
+                    <span class="badge">Team size: 2</span>
+                </div>
+            </div>
+
+            <!-- First image -->
+            <div class="story-media-box">
+                <img src="images/personal_project1/BannerDeadAir.png" alt="Project Banner">
+            </div>
+
+            <!-- First textbox -->
+            <div class="story-text-card">
+                <h3>Project Information</h3>
+                <p><strong>Dead Air</strong> is a game I've created for the <strong>Dutch Global Game Jam 2026</strong> in Groningen. The theme during this game jam was "Mask". Down below you'll see more about the gameplay!</p>
+                <br>
+                <p><strong>Game Story:</strong> The power plant has malfunctioned, it has released tons of toxic gas. You are a "Breather", a disposable technician sent into the dark tunnels to seal the leaks. But in these depths, it isn't just the dark you have to worry about. The air itself is your greatest enemy. In Dead Air, you must navigate a underground maze where every second counts.</p>
+                <br>
+                <p>Click on this link to open the itch.io page of the game:</p>
+                <a href="https://meatchips.itch.io/dead-air"><strong>https://meatchips.itch.io/dead-air</strong></a>
+            </div>
+
+            <!-- Second image -->
+            <div class="story-media-box">
+                <img src="images/personal_project1/gameplay1.png" alt="Project Screenshot 1">
+            </div>
+
+            <!-- Second textbox -->
+            <div class="story-text-card">
+                <h3>My Contributions</h3>
+
+                <!-- Programming Section -->
+                <h4>Programming</h4>
+                <ul>
+                    <li>Created player movement</li>
+                    <li>Created interaction system</li>
+                    <li>Created the player's animation controller</li>
+                    <li>Created a game manager that takes care of the game its flow, start to end</li>
+                    <li>Implemented FMOD audio control</li>
+                    <li>Created a rope placing mechanic, where the rope will always touch the ground doesn't matter how far the ground is</li>
+                    <li>Created a system for the gas masks to lose their durability</li>
+                </ul>
+
+                <!-- Art Section -->
+                <h4>Art</h4>
+                <ul>
+                    <li>2D sprites for the map (background, walkable ground)</li>
+                    <li>Gasmasks</li>
+                    <li>Fully customizable pipes</li>
+                    <li>Lamp posts</li>
+                    <li>Rope</li>
+                    <li>Simple player animations (not finished)</li>
+                </ul>
+            </div>
+
+            <!-- Third image -->
+            <div class="story-media-box">
+                <img src="images/personal_project1/gameplay2.png" alt="Project Screenshot 2">
+            </div>
+
+            <!-- Third textbox -->
+            <div class="story-text-card">
+                <h3>Special Thanks</h3>
+                <p>Thanks to the Dutch Global Game Jam for organizing this event! And also thanks to my teammate for creating the audio and introducing me into FMOD!</p>
+            </div>
+
+            <div id="imageModal" class="modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="expandedImg" alt="Expanded View">
+            </div>
+
+            <script>
+                // Get the modal elements
+                const modal = document.getElementById("imageModal");
+                const modalImg = document.getElementById("expandedImg");
+                const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+                // Find all images in your dropdowns and media boxes
+                const images = document.querySelectorAll(".dropdown-media img, .story-media-box img");
+
+                // When an image is clicked, open the modal and display that image
+                images.forEach(img => {
+                    img.addEventListener("click", function() {
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    });
+                });
+
+                // Close modal when clicking the 'X' button
+                closeBtn.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // Close modal when clicking anywhere outside the image background
+                modal.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+</body>
+</html>
