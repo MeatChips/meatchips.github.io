@@ -118,6 +118,17 @@ body {
     color: var(--primary-color);
 }
 
+.table-of-contents .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+
 /* ==========================================================================
    04. ABOUT ME SECTION (2-Column Layout)
    ========================================================================== */
