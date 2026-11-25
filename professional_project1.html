@@ -75,7 +75,239 @@
                 <h3>My Contributions</h3>
 
                 <!-- Programming Section -->
-                <h4>Programming</h4>
+                <h4>Programming & Unity</h4>
+                <p>You can expand the contributions for more info!</p>
+                <div class="programming-dropdowns">
+                    <!-- 1. Drone Tutorials -->
+                    <details class="contribution-dropdown">
+                        <summary>Made all the tutorials for the drone, plus a way to play them in order or to pick one on its own.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>Tutorial Manager &amp; Tutorials:</strong></p>
+                                <img src="images/project1/programming/droneflying_tutorial.gif" alt="Waypoint Tutorial GIF">
+                                <br>
+                                <p><strong>What I have made:</strong><br>
+                                I have created an entire tutorial system with different tutorials. These are the tutorials that I have created: Waypoint, Orbit, Hold Height and Landing.</p>
+                                <br>
+                                <p><strong>Challenge & Solution:</strong><br>
+                                During this process, I ran into an issue, since every tutorial had a bunch of waypoints for the drone to fly towards to. But assigning these waypoints in the unity inspector would become annoying if you have to do it over and over again. I thought about using tags, but that searches the whole scene and could grab wrong waypoints for example. Instead, I made the parent object look at its own children objects. I used C# LINQ (Where / OrderBy / StartsWith) to ignore all the other children and only look for the waypoints. I was also able to give the waypoints a number, so it could sort the children. So it starts at waypoint 1, then 2, etc.</p>
+                                <br>
+                                <p><strong>Code Snippet:</strong></p>
+                                <img src="images/project1/programming/codesnippet_1.png" alt="Code Snippet">
+                                <br>
+                                <p><strong>What I learned from this challenge:</strong></p>
+                                <ul>
+                                    <li>I learned how to use some LINQ methods to keep code clean and search for specific objects of a scene.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 2. Hangar Layouts -->
+                    <details class="contribution-dropdown">
+                        <summary>Built a system to choose different layouts to fly around in the hangar.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>What I have made:</strong><br>
+                                Inside the same system of the tutorials, there is another place for the player to choose an layout. This layout gets spawned in the hangar and then you can freely fly around.</p>
+                                <br>
+                                <p><strong>Feature Information:</strong><br>
+                                <p>On this image are all the layouts shown inside the UI, by clicking on one of them it spawns them inside the world.</p>
+                                <img src="images/project1/programming/flyinglayouts.png" alt="Code Snippet">
+                                <br>
+                                <p><strong>Code Snippet:</strong></p>
+                                <p>This snippet of code enables & disables layouts, also there is a function which is used inside the OnClick event of a UI button. You can drag the tutorial in its parameter and when pressing on this button it spawns that layout.</p>
+                                <img src="images/project1/programming/codesnippet_5.png" alt="Code Snippet">
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 3. Buttons & Screens -->
+                    <!-- <details class="contribution-dropdown">
+                        <summary>Made sure all the buttons and screens worked with everything in the game.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>What I have done:</strong><br>
+                                I made sure the entire UI, all buttons, toggling panels, pop ups, etc. that they all worked how they are supposed to.</p>
+                            </div>
+                        </div>
+                    </details> -->
+
+                    <!-- 4. Universal Interaction System -->
+                    <details class="contribution-dropdown">
+                        <summary>Built a universal interaction system.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>Modular Interaction System:</strong></p>
+                                <img src="images/project1/programming/interactionsystem.gif" alt="Interaction System GIF">
+                                <br>
+                                <p><strong>What I have made:</strong><br>
+                                I made a modular interface-based interaction system that allows the player to look at an interactable object in the world and see the correct keyboard prompt on their screen and interact with it.</p>
+                                <br>
+                                <p><strong>Feature Information:</strong><br>
+                                Instead of writing custom interaction logic for every single object, I built a modular system using interfaces and Unity's new input system.</p>
+                                <ul>
+                                    <li>Interface-based system: Any object in the game can become an interactable, simply by having a script that inherits from the IInteractable interface.</li>
+                                    <li>Keybind prompt: The system reads the player's active keybindings and displays it inside the UI.</li>
+                                </ul>
+                                <br>
+                                <p><strong>Code Snippet:</strong></p>
+                                <img src="images/project1/programming/codesnippet_2.png" alt="Code Snippet">
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 5. In-Game Menus -->
+                    <!-- <details class="contribution-dropdown">
+                        <summary>Created all the in-game menus.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>What I have made:</strong><br>
+                                I created all the different menus used in the game. Here is a list of all those menus:</p>
+                                <ul>
+                                    <li>Main menu</li>
+                                    <li>Credits menu</li>
+                                    <li>Pause menu</li>
+                                    <li>Tutorial/layouts menu</li>
+                                    <li>Drone customization menu</li>
+                                    <li>Drone customization menu</li>
+                                </ul>
+                                <br>
+                                <p><strong>Menu screenshots:</strong><br>
+                                <p>Drone Customization Menu Screenshot:</p>
+                                <img src="images/project1/programming/dronecustomizationmenu.png" alt="Menu Screenshot">
+                                <p>Tutorials Menu Screenshot:</p>
+                                <img src="images/project1/programming/tutorialmenu.png" alt="Menu Screenshot">
+                                <p>Main Menu Screenshot:</p>
+                                <img src="images/project1/programming/mainmenu.png" alt="Menu Screenshot">
+                            </div>
+                        </div>
+                    </details> -->
+
+                    <!-- 6. Person / Drone Switching -->
+                    <details class="contribution-dropdown">
+                        <summary>Made it easy to switch between playing as the person on foot and flying the drone.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>What I have made:</strong><br>
+                                I've created a script that makes it easy to switch between controlling the player and controlling the drone. Here is a list of things that it does during the switch:</p>
+                                <ul>
+                                    <li>Enables and disables scripts</li>
+                                    <li>Switches the input action maps</li>
+                                    <li>Toggles UI elements and drone objects (Propwash VFX) on/off</li>
+                                </ul>
+                                <p>Now that the project is finished and I look back at it. Turning scripts on and off could lead to other issues, so next time I should make something like a state machine instead for the drone and player.</p>
+                                <br>
+                                <p><strong>Challenge & Solution:</strong><br>
+                                During the making of this feature, the biggest challenge were input action maps. This was the first time I ever worked with switching maps, before I had put everything in one map. But that </p>
+                                <br>
+                                <p><strong>Code Snippet:</strong></p>
+                                <p>This function toggle between the drone and the player and does everything that's mentioned above.</p>
+                                <img src="images/project1/programming/codesnippet_15.png" alt="Code Snippet">
+                                <P>This function toggles the UI elements and drone objects, which I mentioned above. This is all based on if the drone is in control or not.</P>
+                                <img src="images/project1/programming/codesnippet_14.png" alt="Code Snippet">
+                                <p>This is where the toggling actually happens between the drone and the player.</p>
+                                <img src="images/project1/programming/codesnippet_16.png" alt="Code Snippet">
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 7. Player & Camera Movement -->
+                    <details class="contribution-dropdown">
+                        <summary>Created the player & camera movement.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>What I have made:</strong><br>
+                                I've created the player's movement and camera's movement. I use these scripts in a lot of different projects, its a reusable package that I just import.</p>
+                                <br>
+                                <p><strong>Player Movement - Code Snippet:</strong></p>
+                                <p>This is the code for the player's movement. It uses Unity's new input system.</p>
+                                <img src="images/project1/programming/codesnippet_10.png" alt="Code Snippet">
+                                <img src="images/project1/programming/codesnippet_11.png" alt="Code Snippet">
+                                <br>
+                                <p><strong>Camera Movement - Code Snippet:</strong></p>
+                                <p>These are parts of the code for the camera movement. There is a lot more going on inside the camera movement, like whenever you interact with the drone customization menu the camera lerps to a specific position and it also handles the zooming and out for the drone. But here I'll put the focus on the camera movement when you are just walking around.</p>
+                                <img src="images/project1/programming/codesnippet_12.png" alt="Code Snippet">
+                                <img src="images/project1/programming/codesnippet_13.png" alt="Code Snippet">
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 8. Camera Zoom -->
+                    <details class="contribution-dropdown">
+                        <summary>Added a camera zoom in and out feature for flying the drone.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>What I have made:</strong><br>
+                                Added the zooming in and out of the camera for when flying the drone. The further away the drone is, the more zoomed in you are.</p>
+                                <br>
+                                <p><strong>Challenge & Solution:</strong><br>
+                                The challenge during this task was finding a good value for the variables. Sometimes the drone was too much zoomed in and the other time it was too far zoomed out.</p>
+                                <p>The way we solved this is by a lot of playtesting, we have playtested with actual students from a drone flying study. Since they have flown a lot more than us, their knowledge and feedback was very valuable to us. So based on their feedback, we were able to put the right values down in the variables.</p>
+                                <br>
+                                <p><strong>Code Snippet:</strong></p>
+                                <p>This code shows the 5 variables needed for the zooming in and out for the drone. When in the Unity inspector, you can hove over them and it explains what its for.</p>
+                                <img src="images/project1/programming/codesnippet_9.png" alt="Code Snippet">
+                                <p>This code handles that the player constantly looks at the drone and it also zooms in and out based on how far away the drone is. So the further away the drone, the more it zooms in. Now there is a limit to where you can zoom in, because the more you are zoomed in the more difficult it is to actually fly the drone.</p>
+                                <img src="images/project1/programming/codesnippet_8.png" alt="Code Snippet">
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 9. Tutorial On/Off Toggle -->
+                    <details class="contribution-dropdown">
+                        <summary>Added an option to turn tutorial on or off.</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>What I have made:</strong><br>
+                                Inside the main menu, there is a toggle which decides whether there is a controls tutorial when you start the game. This way the player does not have to do the tutorial everytime they start the gamne.</p>
+                                <br>
+                                <p><strong>Feature Information:</strong><br>
+                                This toggle is also saved on your device, so next time you start the game. You don't have to click the toggle every single time. This is done by using <strong>PlayerPrefs</strong> which you will be able to see in the code snippet down below.</p>
+                                <br>
+                                <p><strong>Code Snippet:</strong></p>
+                                <p>Since it is not possible to save booleans inside a PlayerPref, I used an int instead. So then in this case 1 stands for true and 0 stands for false.</p>
+                                <img src="images/project1/programming/codesnippet_6.png" alt="Code Snippet">
+                                <p>Then inside the ControlsTutorialManager script, it grabs that PlayerPref we saved and adds it to the boolean</p>
+                                <img src="images/project1/programming/codesnippet_7.png" alt="Code Snippet">
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 10. Editor Screenshot Tool (with your original full write-up) -->
+                    <details class="contribution-dropdown">
+                        <summary>Editor Screenshot Tool (Custom Unity Tool)</summary>
+                        <div class="dropdown-content">
+                            <div class="dropdown-media">
+                                <p><strong>Editor Screenshot Tool:</strong></p>
+                                <img src="images/project1/programming/screenshot_editor_window.png" alt="Screenshot of Editor Tool">
+                                <br>
+                                <p><strong>What I have made:</strong><br>
+                                I created a custom Unity tool that allowed us to capture in-game screenshots directly inside the editor without cluttering UI elements or manually hiding canvases.</p>
+                                <br>
+                                <p><strong>Challenge & Solution:</strong><br>
+                                Taking manual screenshots for tutorials and marketing materials meant dealing with turning on/off the UI every single time. So the way I fixed it was by creating a custom Unity tool with configurable fields like resolution scaling, folder path and file name. To handle the UI cleanly, the script temporarily disables all active canvases, takes the screenshot and uses EditorApplication.delayCall to safely turn them back on so the UI doesn't accidentally sneak into the screenshot.</p>
+                                <br>
+                                <p><strong>Code Snippet:</strong></p>
+                                <img src="images/project1/programming/codesnippet_3.png" alt="Code Snippet">
+                                <br>
+                                <p><strong>What I learned from this challenge:</strong></p>
+                                <ul>
+                                    <li>How to create custom Unity Editor windows with GUI elements like buttons, sliders and text fields</li>
+                                    <li>How to use EditorApplication.delayCall to handle frame timing.</li>
+                                    <li>Something I found funny to see, you always have to reset GUI.backgroundColor back to the default color after for example giving color to a button. Otherwise the entire Unity Editor becomes that color. Which you can see on the code snippet down below.</li>
+                                </ul>
+                                <br>
+                                <p><strong>Code Snippet:</strong></p>
+                                <img src="images/project1/programming/codesnippet_4.png" alt="Code Snippet">
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+
+
+                <!-- <h4>Programming</h4>
                 <ul>
                     <li>Made all the tutorials for the drone, plus a way to play them in order or to pick one on its own.</li>
                     <li>Built a system to choose different layouts to fly around in the hangar.</li>
@@ -163,7 +395,7 @@
                             <br>
                         </div>
                     </div>
-                </details>
+                </details> -->
 
 
                 <!-- UI Design Section -->
@@ -176,7 +408,7 @@
                 </ul>
 
                 <details class="contribution-dropdown">
-                    <summary>Click here to see the UI designs</summary>
+                    <summary>Click here to see some UI layouts</summary>
                     <div class="dropdown-content">
                         <div class="dropdown-media">
                             <img src="images/project1/ui/tutorials_layout.png" alt="Tutorials UI Design">
@@ -218,7 +450,7 @@
                 <img class="modal-content" id="expandedImg" alt="Expanded View">
             </div>
 
-            <footer class="site-footer">
+            <footer class="footer">
                 <p>&copy; 2026</span> Gijs Elderman. All rights reserved.</p>
             </footer>
 

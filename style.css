@@ -373,11 +373,7 @@ a.project-card:hover {
     filter: brightness(1.2);
 }
 
-/* ==========================================================================
-06.5. FOOTER SECTION
-   ========================================================================== */
-
-.site-footer {
+.footer {
     border-top: 2px solid var(--border-color);
     padding-top: 25px;
     margin-top: auto; 
